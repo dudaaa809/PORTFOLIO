@@ -1,0 +1,308 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+
+    background-color: #ecd6d8;
+
+    background-image: url("./img - Copia/image copy 95.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    font-family: "EB Garamond", serif;
+
+    color: #963D5A;
+
+    padding-bottom: 50px;
+}
+
+
+/* =========================
+   BOTÃO VOLTAR
+========================= */
+
+.voltar {
+    position: fixed;
+
+    top: 20px;
+    left: 22px;
+
+    padding: 8px 17px;
+
+    border: 1px solid #C99AAA;
+    border-radius: 25px;
+
+    background: rgba(255, 255, 255, 0.35);
+
+    color: #74354B;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 13px;
+    letter-spacing: 1.5px;
+
+    text-decoration: none;
+
+    z-index: 100;
+
+    transition: 0.3s;
+}
+
+.voltar:hover {
+    background: #963D5A;
+    color: #F1DDE1;
+}
+
+
+/* =========================
+   TÍTULO
+========================= */
+
+.titulo {
+    width: 100%;
+
+    padding-top: 25px;
+
+    text-align: center;
+
+    color: #963D5A;
+
+    font-family: "Anton", sans-serif;
+
+    font-size: clamp(48px, 6vw, 80px);
+
+    font-weight: 400;
+
+    line-height: 1;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+    width: 800px;
+    max-width: calc(100% - 40px);
+
+    min-height: 480px;
+
+    margin: 55px auto 0;
+
+    padding: 60px 70px;
+
+    background: rgba(255, 248, 250, 0.88);
+
+    border: 2px solid rgba(255, 255, 255, 0.9);
+
+    border-radius: 32px;
+
+    box-shadow: 0 12px 30px rgba(110, 55, 70, 0.15);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+/* =========================
+   TÍTULO DO CARD
+========================= */
+
+.card h2 {
+    margin-bottom: 35px;
+
+    color: #963D5A;
+
+    font-family: "EB Garamond", serif;
+
+    font-size: 34px;
+
+    font-weight: 600;
+
+    text-align: center;
+}
+
+
+/* =========================
+   REFERÊNCIAS
+========================= */
+
+.referencias {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+.referencias a {
+    color: #963D5A;
+
+    font-family: "EB Garamond", serif;
+
+    font-size: 23px;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+.referencias a:hover {
+    color: #74354B;
+
+    text-decoration: underline;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    .titulo {
+        padding-top: 80px;
+        font-size: 55px;
+    }
+
+    .card {
+        width: 85%;
+        min-height: 450px;
+        padding: 50px 40px;
+    }
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+    body {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .voltar {
+        top: 15px;
+        left: 15px;
+
+        font-size: 11px;
+
+        padding: 7px 13px;
+    }
+
+    .titulo {
+        padding-top: 75px;
+
+        font-size: 43px;
+    }
+
+    .card {
+        width: calc(100% - 30px);
+
+        min-height: 430px;
+
+        margin: 40px auto 0;
+
+        padding: 35px 20px;
+
+        border-radius: 25px;
+    }
+
+    .card h2 {
+        font-size: 27px;
+        margin-bottom: 30px;
+    }
+
+    .referencias {
+        gap: 13px;
+    }
+
+    .referencias a {
+        font-size: 20px;
+        text-align: center;
+    }
+}
+/* =========================
+   ELEMENTOS AO REDOR DO CARD
+========================= */
+
+.container {
+    position: relative;
+}
+
+
+/* LIVROS */
+
+.livros {
+    position: absolute;
+
+    width: 300px;
+
+    left: -70px;
+    bottom: -80px;
+}
+
+
+/* LÂMPADAS */
+
+.lampada {
+    position: absolute;
+
+    width: 85px;
+}
+
+
+/* SUPERIOR ESQUERDA */
+
+.lampada1 {
+    top: -25px;
+    left: -15px;
+}
+
+
+/* SUPERIOR DIREITA */
+
+.lampada2 {
+    top: -25px;
+    right: -15px;
+}
+
+
+/* INFERIOR DIREITA */
+
+.lampada3 {
+    bottom: -25px;
+    right: -15px;
+}
+
+
+/* LATERAL ESQUERDA */
+
+.lampada4 {
+    bottom: 80px;
+    left: -40px;
+}

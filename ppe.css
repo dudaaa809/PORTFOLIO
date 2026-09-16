@@ -1,0 +1,101 @@
+body{
+    background-color:#ead4d4;
+}
+.plano-estudo{
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.plano-estudo h1{
+    font-size: 70px;
+    font-family: 'Anton', sans-serif;
+    color: #9a3f5e;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
+}
+
+.quadro{
+    max-width: 900px;
+    margin: auto;
+    background: #ead8d8;
+    border-radius: 35px;
+    padding: 60px 40px;
+    border: 3px solid #d8f4ff;
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+}
+
+table{
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 10px;
+}
+
+th,
+td{
+    background: #94384d;
+    color: white;
+    padding: 18px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 14px;
+}
+
+th{
+    font-size: 15px;
+}
+
+.hora{
+    width: 90px;
+    font-size: 12px;
+}
+
+
+.flor{
+    position: absolute;
+
+    width: 300px;
+
+    right: -30px;
+    bottom: -10px;
+}
+.voltar {
+
+position: fixed;
+
+top: 25px;
+left: 25px;
+
+text-decoration: none;
+
+color: #662740;
+
+font-family: 'Oswald', sans-serif;
+
+font-size: 13px;
+
+letter-spacing: 2px;
+
+padding: 10px 16px;
+
+border: 1px solid rgba(102, 39, 64, 0.35);
+
+border-radius: 20px;
+
+background: rgba(255, 255, 255, 0.45);
+
+transition: 0.3s;
+
+z-index: 10;
+
+
+}
+
+.voltar:hover {
+
+
+background: #662740;
+
+color: white;
+
+
+}

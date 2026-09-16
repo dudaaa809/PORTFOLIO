@@ -1,0 +1,300 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: Arial, sans-serif;
+
+    background: linear-gradient(
+        135deg,
+        #f5d6e5,
+        #c481a5
+    );
+}
+
+
+/* =========================
+   CARD DO LOGIN
+========================= */
+
+.center {
+    width: 100%;
+    max-width: 420px;
+
+    background: #ffffff;
+
+    padding: 40px;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.15);
+
+    text-align: center;
+}
+
+
+/* =========================
+   TÍTULO
+========================= */
+
+.center h1 {
+    margin-bottom: 35px;
+
+    color: #000;
+
+    font-size: 32px;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   FORMULÁRIO
+========================= */
+
+#loginForm {
+    width: 100%;
+}
+
+
+/* =========================
+   CAMPOS
+========================= */
+
+.text_field {
+    position: relative;
+
+    width: 100%;
+
+    margin-bottom: 28px;
+
+    text-align: left;
+}
+
+
+.text_field input {
+    width: 100%;
+
+    height: 50px;
+
+    padding: 0 15px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    font-size: 15px;
+
+    color: #333;
+
+    background: #fff;
+
+    transition: 0.3s;
+}
+
+
+.text_field input:focus {
+    border-color: #943e68;
+
+    box-shadow:
+        0 0 0 2px rgba(148, 62, 104, 0.10);
+}
+
+
+/* =========================
+   LABEL
+========================= */
+
+.text_field label {
+    position: absolute;
+
+    left: 15px;
+
+    top: -9px;
+
+    padding: 0 6px;
+
+    background: white;
+
+    color: #943e68;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   ESQUECEU A SENHA
+========================= */
+
+.pass {
+    margin-top: -10px;
+
+    margin-bottom: 25px;
+
+    text-align: right;
+
+    color: #943e68;
+
+    font-size: 14px;
+
+    cursor: pointer;
+}
+
+.pass:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   BOTÕES
+========================= */
+
+.botoes {
+    display: flex;
+
+    gap: 12px;
+
+    width: 100%;
+}
+
+
+.botoes input {
+    flex: 1;
+
+    height: 48px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+/* BOTÃO CONECTAR */
+
+.btn-conectar {
+    background: #943e68;
+
+    color: white;
+}
+
+
+.btn-conectar:hover {
+    background: #7d3157;
+
+    transform: translateY(-1px);
+}
+
+
+/* BOTÃO CANCELAR */
+
+.btn-cancelar {
+    background: #eee;
+
+    color: #943e68;
+
+    border: 1px solid #ddd !important;
+}
+
+
+.btn-cancelar:hover {
+    background: #e4e4e4;
+}
+
+
+/* =========================
+   CADASTRO
+========================= */
+
+.signup_link {
+    margin-top: 25px;
+
+    text-align: center;
+
+    font-size: 14px;
+}
+
+
+.signup_link a {
+    color: #943e68;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+
+.signup_link a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   MENSAGEM
+========================= */
+
+#mensagem {
+    margin-top: 18px;
+
+    text-align: center;
+
+    color: #943e68;
+
+    font-size: 14px;
+
+    min-height: 20px;
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 480px) {
+
+    .center {
+        width: calc(100% - 30px);
+
+        padding: 30px 25px;
+
+        border-radius: 18px;
+    }
+
+
+    .center h1 {
+        font-size: 28px;
+
+        margin-bottom: 30px;
+    }
+
+
+    .botoes {
+        flex-direction: column;
+    }
+
+
+    .botoes input {
+        width: 100%;
+    }
+
+}

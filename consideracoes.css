@@ -1,0 +1,361 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   CONFIGURAÇÕES DA PÁGINA
+========================================= */
+
+body {
+    min-height: 100vh;
+
+    background-image: url('./img - Copia/image copy 95.png');
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    background-color: #ecd6d8;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    color: #662740;
+
+    padding: 30px 20px 60px;
+}
+
+
+
+
+
+/* =========================================
+   BOTÃO VOLTAR
+========================================= */
+
+.voltar {
+    position: absolute;
+
+    top: 18px;
+    left: 22px;
+
+    padding: 8px 17px;
+
+    border: 1px solid #C99AAA;
+    border-radius: 25px;
+
+    background: rgba(255, 255, 255, 0.25);
+
+    color: #74354B;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 400;
+
+    letter-spacing: 1.5px;
+
+    text-decoration: none;
+
+    z-index: 100;
+
+    transition: all 0.3s ease;
+}
+
+.voltar:hover {
+    background: #963D5A;
+
+    color: #F1DDE1;
+
+    border-color: #963D5A;
+}
+
+
+/* =========================================
+   TÍTULO PRINCIPAL
+========================================= */
+
+.titulo-container {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding-top: 25px;
+
+    text-align: center;
+
+    position: relative;
+
+    z-index: 5;
+}
+
+.titulo-container h1 {
+    margin: 0;
+
+    color: #963D5A;
+
+    font-family: "Anton", sans-serif;
+
+    font-size: clamp(48px, 5vw, 82px);
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    letter-spacing: 0;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================
+   ÁREA PRINCIPAL
+========================================= */
+
+main {
+    width: 100%;
+
+    min-height: calc(100vh - 120px);
+
+    position: relative;
+}
+
+
+/* =========================================
+   CARD DE CONSIDERAÇÕES FINAIS
+========================================= */
+
+.card-consideracoes {
+
+    /* CENTRALIZAÇÃO */
+    position: absolute;
+
+    top: 50%;
+
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+
+    /* TAMANHO */
+    width: 900px;
+
+    max-width: calc(100vw - 80px);
+
+    min-height: 520px;
+
+
+    /* ESPAÇAMENTO */
+    padding: 65px 80px;
+
+
+    /* FUNDO */
+    background: rgba(255, 248, 250, 0.72);
+
+
+    /* BORDA */
+    border: 2px solid rgba(255, 255, 255, 0.9);
+
+    border-radius: 32px;
+
+
+    /* SOMBRA */
+    box-shadow:
+        0 12px 30px rgba(110, 55, 70, 0.12);
+
+
+    /* ORGANIZAÇÃO DO CONTEÚDO */
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: stretch;
+}
+
+
+/* =========================================
+   TÍTULO DENTRO DO CARD
+========================================= */
+
+.card-consideracoes h2 {
+
+    width: 100%;
+
+    margin: 0 0 30px;
+
+    color: #963D5A;
+
+    font-family: "EB Garamond", Garamond, serif;
+
+    font-size: 31px;
+
+    font-weight: 600;
+
+    line-height: 1.2;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   TEXTO DOS PARÁGRAFOS
+========================================= */
+
+.card-consideracoes p {
+
+    width: 100%;
+
+    margin: 0 0 25px;
+
+    color: #963D5A;
+
+    font-family: "EB Garamond", Garamond, serif;
+
+    font-size: 23px;
+
+    font-weight: 400;
+
+    line-height: 1.55;
+
+    text-align: justify;
+}
+
+
+/* Remove margem do último parágrafo */
+
+.card-consideracoes p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================
+   TABLETS
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .card-consideracoes {
+        width: 85%;
+
+        max-width: 850px;
+
+        padding: 55px 60px;
+    }
+
+    .card-consideracoes p {
+        font-size: 21px;
+    }
+}
+
+
+/* =========================================
+   CELULARES
+========================================= */
+
+@media (max-width: 600px) {
+
+    /* Botão */
+
+    .voltar {
+        top: 15px;
+
+        left: 15px;
+
+        padding: 7px 13px;
+
+        font-size: 11px;
+    }
+
+
+    /* Título */
+
+    .titulo-container {
+
+        padding-top: 75px;
+
+        padding-left: 15px;
+
+        padding-right: 15px;
+    }
+
+    .titulo-container h1 {
+
+        font-size: 43px;
+    }
+
+
+    /* Área principal */
+
+    main {
+
+        min-height: auto;
+
+        padding: 0;
+    }
+
+
+    /* Card */
+
+    .card-consideracoes {
+
+        position: relative;
+
+        top: auto;
+
+        left: auto;
+
+        transform: none;
+
+        width: calc(100% - 30px);
+
+        max-width: none;
+
+        min-height: auto;
+
+        margin: 45px auto 40px;
+
+        padding: 35px 25px;
+
+        border-radius: 25px;
+    }
+
+
+    /* Título do card */
+
+    .card-consideracoes h2 {
+
+        margin-bottom: 25px;
+
+        font-size: 27px;
+    }
+
+
+    /* Texto */
+
+    .card-consideracoes p {
+
+        margin-bottom: 22px;
+
+        font-size: 19px;
+
+        line-height: 1.5;
+
+        text-align: left;
+    }
+}
+

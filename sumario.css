@@ -1,0 +1,183 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #ecd6d8;
+    min-height: 100vh;
+    padding: 20px;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+
+
+.pagina{
+    width: 40%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+
+
+.titulo{
+    text-align: center;
+    font-family: 'Anton', sans-serif;
+    font-size: 90px;
+    color: #8d435a;
+    letter-spacing: 4px;
+    margin-bottom: 25px;
+}
+
+
+
+.container{
+    background-color: #f8edf2;
+    border: 3px solid #ffffff;
+    border-radius: 40px;
+    min-height: 500px;
+    position: relative;
+    padding: 50px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.10);
+}
+
+
+
+.conteudo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+}
+
+
+ul{
+    color: #8d435a;
+    font-size: 25px;
+    font-weight: bold;
+    line-height: 1.8;
+    padding-left: 30px;
+}
+
+
+
+
+
+
+.livros{
+    position: absolute;
+    width: 300px;
+    left: -70px;
+    bottom: -80px;
+}
+
+
+
+.lampada{
+    position: absolute;
+    width: 85px;
+}
+
+.lampada1{
+    top: -25px;
+    left: -15px;
+}
+
+.lampada2{
+    top: -25px;
+    right: -15px;
+}
+
+.lampada3{
+    bottom: -25px;
+    right: -15px;
+}
+
+.lampada4{
+    bottom: 80px;
+    left: -40px;
+}
+
+
+@media (max-width: 950px){
+
+    .conteudo{
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .titulo{
+        font-size: 70px;
+    }
+
+
+    ul{
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 600px){
+
+    .titulo{
+        font-size: 45px;
+    }
+
+    ul{
+        font-size: 18px;
+    }
+
+    .livros{
+        width: 100px;
+        left: -10px;
+    }
+
+    .lampada{
+        width: 50px;
+    }
+
+    .container{
+        padding: 25px;
+    }
+}
+.voltar {
+
+position: fixed;
+
+top: 25px;
+left: 25px;
+
+text-decoration: none;
+
+color: #662740;
+
+font-family: 'Oswald', sans-serif;
+
+font-size: 13px;
+
+letter-spacing: 2px;
+
+padding: 10px 16px;
+
+border: 1px solid rgba(102, 39, 64, 0.35);
+
+border-radius: 20px;
+
+background: rgba(255, 255, 255, 0.45);
+
+transition: 0.3s;
+
+z-index: 10;
+
+
+}
+
+.voltar:hover {
+
+
+background: #662740;
+
+color: white;
+
+
+}

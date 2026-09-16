@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <title>Portfólio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- =====================================
+     TELA DE LOGIN (SOBREPÕE O PORTFÓLIO)
+====================================== -->
+<div id="tela-login" style="
+    position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+    background-color: #ecd6d8; background-image: url('./img - Copia/image copy 95.png');
+    background-size: cover; background-position: center;
+    display: flex; justify-content: center; align-items: center; z-index: 9999;
+">
+    <div style="
+        background: rgba(255, 248, 250, 0.85); padding: 50px; border-radius: 25px; 
+        text-align: center; border: 2px solid rgba(255, 255, 255, 0.9);
+        box-shadow: 0 12px 30px rgba(110, 55, 70, 0.12); max-width: 400px; width: 90%;
+    ">
+        <h1 style="color: #963D5A; font-family: 'Oswald', sans-serif; margin-bottom: 25px; letter-spacing: 2px;">ACESSO PORTFÓLIO</h1>
+        
+        <input type="email" id="email" placeholder="Digite seu e-mail" style="
+            width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 10px; 
+            border: 1px solid #C99AAA; font-family: 'Cormorant Garamond', serif; font-size: 16px; box-sizing: border-box;
+        ">
+        
+        <input type="password" id="senha" placeholder="Digite sua senha" style="
+            width: 100%; padding: 12px; margin-bottom: 20px; border-radius: 10px; 
+            border: 1px solid #C99AAA; font-family: 'Cormorant Garamond', serif; font-size: 16px; box-sizing: border-box;
+        ">
+        
+        <button onclick="fazerLogin()" style="
+            width: 100%; padding: 12px; background: #963D5A; color: white; border: none; 
+            border-radius: 20px; font-family: 'Oswald', sans-serif; font-size: 16px; 
+            cursor: pointer; letter-spacing: 2px;
+        ">ENTRAR</button>
+        
+        <p id="erro-login" style="color: red; display: none; margin-top: 15px; font-family: sans-serif; font-size: 14px;">
+            E-mail ou senha incorretos!
+        </p>
+    </div>
+</div>
+
+<!-- =====================================
+     CONTEÚDO DO PORTFÓLIO (INICIA ESCONDIDO)
+====================================== -->
+<div id="conteudo-portfolio" style="display: none;">
+
+    <!-- BARRINHAS DO MENU LATERAL -->
+    <button class="menu-lateral-btn" id="menuLateralBtn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- MENU LATERAL -->
+    <div class="menu-lateral" id="menuLateral">
+        <a href="curriculo.html">CURRÍCULO</a>
+        <a href="anexos.html">ANEXOS</a>
+        <a href="consideracoes.html">CONSIDERAÇÕES FINAIS</a>
+        <a href="referencias.html">REFERÊNCIAS</a>
+    </div>
+
+   
+    <!-- MENU ORIGINAL COM ATIVIDADES ESCOLHIDAS POR ÚLTIMO -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="sumário.html">SUMÁRIO</a></li>
+                <li><a href="sobre.html">SOBRE MIM</a></li>
+                <li><a href="ppe.html">PPE</a></li>
+                <li><a href="projeto.html">PROJETO</a></li>
+                <li><a href="linguagens.html">LINGUAGENS</a></li>
+                <li><a href="humanas.html">HUMANAS</a></li>
+                <li><a href="natureza.html">NATUREZA</a></li>
+                <li><a href="matemática.html">MATEMÁTICA</a></li>
+                <li><a href="senai.html">SENAI</a></li>
+
+                <!-- ITEM ADICIONADO NO FINAL DO MENU -->
+                <li class="dropdown">
+                    <a href="atividades-escolhidas.html" class="dropdown-btn">
+                        ATIVIDADES ESCOLHIDAS <span class="seta">▼</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <!-- LINGUAGENS -->
+                        <li class="sub-dropdown-item">
+                            <a href="atividades-escolhidas.html#ling-eixo1">LINGUAGENS <span class="seta-sub">◂</span></a>
+                            <ul class="eixos-menu">
+                                <li><a href="atividades-escolhidas.html#ling-eixo1">Eixo 1</a></li>
+                                <li><a href="atividades-escolhidas.html#ling-eixo2">Eixo 2</a></li>
+                                <li><a href="atividades-escolhidas.html#ling-eixo3">Eixo 3</a></li>
+                                <li><a href="atividades-escolhidas.html#ling-eixo4">Eixo 4</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- HUMANAS -->
+                        <li class="sub-dropdown-item">
+                            <a href="atividades-escolhidas.html#hum-eixo1">HUMANAS <span class="seta-sub">◂</span></a>
+                            <ul class="eixos-menu">
+                                <li><a href="atividades-escolhidas.html#hum-eixo1">Eixo 1</a></li>
+                                <li><a href="atividades-escolhidas.html#hum-eixo2">Eixo 2</a></li>
+                                <li><a href="atividades-escolhidas.html#hum-eixo3">Eixo 3</a></li>
+                                <li><a href="atividades-escolhidas.html#hum-eixo4">Eixo 4</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- NATUREZA -->
+                        <li class="sub-dropdown-item">
+                            <a href="atividades-escolhidas.html#nat-eixo1">NATUREZA <span class="seta-sub">◂</span></a>
+                            <ul class="eixos-menu">
+                                <li><a href="atividades-escolhidas.html#nat-eixo1">Eixo 1</a></li>
+                                <li><a href="atividades-escolhidas.html#nat-eixo2">Eixo 2</a></li>
+                                <li><a href="atividades-escolhidas.html#nat-eixo3">Eixo 3</a></li>
+                                <li><a href="atividades-escolhidas.html#nat-eixo4">Eixo 4</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- MATEMÁTICA -->
+                        <li class="sub-dropdown-item">
+                            <a href="atividades-escolhidas.html#mat-eixo1">MATEMÁTICA <span class="seta-sub">◂</span></a>
+                            <ul class="eixos-menu">
+                                <li><a href="atividades-escolhidas.html#mat-eixo1">Eixo 1</a></li>
+                                <li><a href="atividades-escolhidas.html#mat-eixo2">Eixo 2</a></li>
+                                <li><a href="atividades-escolhidas.html#mat-eixo3">Eixo 3</a></li>
+                                <li><a href="atividades-escolhidas.html#mat-eixo4">Eixo 4</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1>PORTFÓLIO</h1>
+        <img src="./img - Copia/image copy 59.png" alt="Logo SENAI" class="logo">
+    </main>
+
+    <footer class="professores">
+        Orientadores: Regiane leal ibiapino - Cleiton Jericó leal
+    </footer>
+
+    <footer class="copyright">
+        © 2026 Eduarda Carvalho- Todos os direitos reservados.
+    </footer>
+
+</div>
+
+<!-- =====================================
+     SCRIPTS DE FUNCIONAMENTO (LOGIN E MENU)
+====================================== -->
+<script>
+    window.onload = function() {
+        if (sessionStorage.getItem('logado') === 'true') {
+            document.getElementById('tela-login').style.display = 'none';
+            document.getElementById('conteudo-portfolio').style.display = 'block';
+        }
+    };
+
+    function fazerLogin() {
+        var email = document.getElementById('email').value.trim();
+        var senha = document.getElementById('senha').value.trim();
+
+        var emailCorreto = 'duda@senai.com';
+        var senhaCorreta = '123456';
+
+        if (email === emailCorreto && senha === senhaCorreta) {
+            sessionStorage.setItem('logado', 'true');
+            document.getElementById('tela-login').style.display = 'none';
+            document.getElementById('conteudo-portfolio').style.display = 'block';
+            document.getElementById('erro-login').style.display = 'none';
+        } else {
+            document.getElementById('erro-login').style.display = 'block';
+        }
+    }
+
+    document.addEventListener('keypress', function(event) {
+        if (event.key === 'Enter' && document.getElementById('tela-login').style.display !== 'none') {
+            fazerLogin();
+        }
+    });
+
+    const botao = document.getElementById("menuLateralBtn");
+    const menu = document.getElementById("menuLateral");
+
+    if (botao && menu) {
+        botao.addEventListener("click", function(event) {
+            event.stopPropagation();
+            menu.classList.toggle("aberto");
+        });
+
+        document.addEventListener("click", function(event) {
+            if (!menu.contains(event.target) && !botao.contains(event.target)) {
+                menu.classList.remove("aberto");
+            }
+        });
+    }
+</script>
+
+</body>
+</html>

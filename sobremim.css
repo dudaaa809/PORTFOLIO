@@ -1,0 +1,173 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #ead4d4;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.pagina{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.titulo{
+    text-align: center;
+    font-family: 'Anton', sans-serif;
+    font-size: 110px;
+    color: #a13b63;
+    letter-spacing: 4px;
+    margin-bottom: 30px;
+}
+
+
+
+.container{
+    background-color: #eadcdc;
+    border: 3px solid #d8f1ff;
+    border-radius: 40px;
+
+    width: 100%;
+    max-width: 1100px;
+
+    height: 550px; /* diminui o card */
+
+    margin: auto;
+
+    padding: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+
+    box-shadow: 0 0 20px rgba(0,0,0,0.12);
+}
+
+
+
+.informacoes{
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    color: #8c4d5f;
+    font-size: 20px;
+    line-height: 1.7;
+    margin-top: 130px;
+}
+.subtitulo{
+    font-size: 20px;
+    color: #5f2b3d;
+}
+
+.card{
+    width: 180px;   
+    height: 230px; 
+    left: 350px;
+    position: relative;
+    top: -240px;    
+    
+}
+
+.card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30px;
+}
+
+
+
+
+
+
+@media(max-width: 900px){
+
+    .container{
+        flex-direction: column;
+        gap: 40px;
+
+        padding: 40px 20px;
+    }
+
+    .titulo{
+        font-size: 60px;
+    }
+
+    .informacoes{
+        font-size: 22px;
+    }
+
+    .subtitulo{
+        font-size: 30px;
+    }
+
+    .personagem img{
+        width: 200px;
+    }
+
+    .pipoca{
+        width: 100px;
+        left: -10px;
+    }
+}
+
+@media(max-width: 600px){
+
+    .titulo{
+        font-size: 45px;
+    }
+
+    .informacoes{
+        font-size: 18px;
+    }
+
+    .subtitulo{
+        font-size: 24px;
+    }
+}
+.voltar {
+
+position: fixed;
+
+top: 25px;
+left: 25px;
+
+text-decoration: none;
+
+color: #662740;
+
+font-family: 'Oswald', sans-serif;
+
+font-size: 13px;
+
+letter-spacing: 2px;
+
+padding: 10px 16px;
+
+border: 1px solid rgba(102, 39, 64, 0.35);
+
+border-radius: 20px;
+
+background: rgba(255, 255, 255, 0.45);
+
+transition: 0.3s;
+
+z-index: 10;
+
+
+}
+
+.voltar:hover {
+
+
+background: #662740;
+
+color: white;
+
+
+}

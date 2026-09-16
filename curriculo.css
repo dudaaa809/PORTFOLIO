@@ -1,0 +1,212 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+
+/* =================================
+PÁGINA
+================================= */
+
+body {
+
+min-height: 100vh;
+
+background-image: url('./img - Copia/image copy 95.png');
+
+background-size: cover;
+
+background-position: center;
+
+background-repeat: no-repeat;
+
+background-color: #ecd6d8;
+
+font-family: 'Cormorant Garamond', serif;
+
+color: #662740;
+
+padding: 30px 20px 60px;
+
+}
+
+/* =================================
+BOTÃO VOLTAR
+================================= */
+
+.voltar {
+
+position: fixed;
+
+top: 25px;
+left: 25px;
+
+text-decoration: none;
+
+color: #662740;
+
+font-family: 'Oswald', sans-serif;
+
+font-size: 13px;
+
+letter-spacing: 2px;
+
+padding: 10px 16px;
+
+border: 1px solid rgba(102, 39, 64, 0.35);
+
+border-radius: 20px;
+
+background: rgba(255, 255, 255, 0.45);
+
+transition: 0.3s;
+
+z-index: 10;
+
+}
+
+.voltar:hover {
+
+background: #662740;
+
+color: white;
+
+}
+
+/* =================================
+CONTEÚDO
+================================= */
+
+.pagina-curriculo {
+
+width: 100%;
+
+max-width: 1100px;
+
+margin: 0 auto;
+
+padding-top: 45px;
+
+}
+
+.pagina-curriculo h1 {
+
+text-align: center;
+
+font-family: 'Oswald', sans-serif;
+
+font-size: 55px;
+
+letter-spacing: 5px;
+
+margin-bottom: 30px;
+
+background: linear-gradient(
+    to right,
+    #8f3f61,
+    #d08ab2
+);
+
+background-clip: text;
+
+-webkit-background-clip: text;
+
+color: transparent;
+
+-webkit-text-fill-color: transparent;
+
+
+}
+
+/* =================================
+CARD DO CURRÍCULO
+================================= */
+
+.card-curriculo {
+    width: 50%;
+    min-height: 500px;
+    padding: 30px;
+
+    background: rgba(255, 255, 255, 0.75);
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 25px;
+
+    box-shadow: 0 15px 40px rgba(102, 39, 64, 0.15);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    margin: 0 auto;
+}
+
+/* =================================
+IMAGEM DO CURRÍCULO
+================================= */
+
+.card-curriculo img {
+    display: block;
+
+    width: 80%;
+    max-width: 700px;
+    height: auto;
+
+    margin: 0 auto;
+
+    border-radius: 8px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* =================================
+RESPONSIVIDADE
+================================= */
+
+@media (max-width: 700px) {
+
+body {
+    padding: 20px 12px 40px;
+}
+
+
+.pagina-curriculo {
+    padding-top: 60px;
+}
+
+
+.pagina-curriculo h1 {
+
+    font-size: 38px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.card-curriculo {
+
+    min-height: auto;
+
+    padding: 12px;
+
+    border-radius: 18px;
+
+}
+
+
+.voltar {
+
+    top: 15px;
+
+    left: 15px;
+
+    font-size: 11px;
+
+    padding: 8px 12px;
+
+}
+
+}

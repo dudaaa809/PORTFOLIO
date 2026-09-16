@@ -1,0 +1,133 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #ecd6d8;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+/* TÍTULO */
+
+.title{
+
+    text-align: center;
+
+    margin-top: 20px;
+
+    font-family: 'Oswald', sans-serif;
+
+    font-size: 110px;
+
+    font-weight: 400;
+
+    background: linear-gradient(to right, #8f3f61, #d08ab2);
+
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+/* CARD */
+
+.card{
+
+    width: 760px;
+
+    min-height: 400px;
+
+    margin: 40px auto;
+
+    background-color: #e7d6d7;
+
+    border-radius: 35px;
+
+    border: 2px solid #d7f3ff;
+
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+
+    display: flex;
+
+    justify-content: space-around;
+
+    align-items: center;
+
+    padding: 40px;
+}
+
+/* TEXTO */
+
+.info{
+    text-align: center;
+}
+
+.info p{
+
+    font-size: 24px;
+
+    color: #4e1f31;
+
+    margin-top: 15px;
+}
+
+.info span{
+
+    display: block;
+
+    font-size: 22px;
+
+    color: #a25b77;
+
+    margin-top: 10px;
+}
+
+/* IMAGEM */
+
+.avatar img{
+
+    width: 260px;
+}
+
+/* DECORAÇÕES */
+
+.decor-left,
+.decor-bottom,
+.decor-right{
+
+    position: absolute;
+
+    font-size: 300px;
+
+    color: #d39cb1;
+
+    opacity: 0.5;
+
+    z-index: -1;
+
+    user-select: none;
+}
+
+.decor-left{
+    top: 10px;
+    left: -70px;
+    transform: rotate(20deg);
+}
+
+.decor-bottom{
+    bottom: -120px;
+    left: -50px;
+    transform: rotate(-20deg);
+}
+
+.decor-right{
+    right: -80px;
+    bottom: -30px;
+    transform: rotate(-25deg);
+}
