@@ -306,3 +306,11 @@ body {
     bottom: 80px;
     left: -40px;
 }
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    .container, main {
+        width: 100% !important;
+    }
+}

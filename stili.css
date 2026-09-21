@@ -131,3 +131,11 @@ body{
     bottom: -30px;
     transform: rotate(-25deg);
 }
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    .container, main {
+        width: 100% !important;
+    }
+}

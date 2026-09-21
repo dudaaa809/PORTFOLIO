@@ -298,3 +298,11 @@ body {
     }
 
 }
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    .container, main {
+        width: 100% !important;
+    }
+}
