@@ -1,112 +1,113 @@
-body{
-    background-color: #ecd6d8;
-    color: rgb(184, 143, 165);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.atvidades img{
-    height: 300px;
-    width: 200px;
+body {
+    min-height: 100vh;
+    background-color: #ecd6d8;
+    background-image: url('./img/image-copy-95.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Cormorant Garamond', serif;
+    color: #662740;
+    padding: 30px 20px 60px;
+}
+
+.titulo-portfolio {
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: 28px;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    color: #662740;
+}
+
+.voltar {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    text-decoration: none;
+    color: #662740;
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+    padding: 8px 14px;
+    border: 1px solid rgba(102, 39, 64, 0.35);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.6);
+    z-index: 100;
+    transition: 0.3s;
+}
+
+.voltar:hover {
+    background: #662740;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: 32px;
+    margin: 30px 0 15px;
+    color: #8f3f61;
 }
 
 .atividades {
     display: flex;
-    gap: 15px;
     flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin-bottom: 40px;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto 30px;
 }
 
 .card {
-    background-color: white;
-    border: 1px solid #d8c1cb;
-    border-radius: 10px;
-    padding: 10px;
-
-    width: 174px;
-    height: 246px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    transition: 0.3s;
-}
-
-.card img {
-    width: 150px;
-    height: 220px;
-    object-fit: contain;
-    display: block;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    padding: 12px;
+    max-width: 320px;
+    width: 100%;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s;
 }
 
 .card:hover {
     transform: translateY(-5px);
-}    
-
-.titulo-portfolio{
-    width: fit-content;
-    margin: 20px auto;
-    padding: 15px 30px;
-    background-color: #f7eef1;
-    border: 2px solid #c99ab0;
-    border-radius: 25px;
-    color: #b88ca1;
-    font-size: 24px;
-    font-weight: bold;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-.voltar {
-
-position: fixed;
-
-top: 25px;
-left: 25px;
-
-text-decoration: none;
-
-color: #662740;
-
-font-family: 'Oswald', sans-serif;
-
-font-size: 13px;
-
-letter-spacing: 2px;
-
-padding: 10px 16px;
-
-border: 1px solid rgba(102, 39, 64, 0.35);
-
-border-radius: 20px;
-
-background: rgba(255, 255, 255, 0.45);
-
-transition: 0.3s;
-
-z-index: 10;
-
-
 }
 
-.voltar:hover {
-
-
-background: #662740;
-
-color: white;
-
-
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
 }
 
-        .secao-area-titulo {
-            background: #963D5A;
-            color: #FFFFFF;
-            padding: 12px 25px;
-            margin: 40px 0 20px 0;
-            font-family: 'Oswald', sans-serif;
-            font-size: 28px;
-            letter-spacing: 2px;
-            border-radius: 10px;
-            text-align: center;
-        }
+/* RESPONSIVIDADE CELULAR */
+@media (max-width: 600px) {
+    body {
+        padding: 70px 12px 30px;
+    }
+
+    .voltar {
+        top: 12px;
+        left: 12px;
+        font-size: 11px;
+        padding: 6px 10px;
+    }
+
+    .titulo-portfolio {
+        font-size: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .card {
+        max-width: 100%;
+    }
+}
