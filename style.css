@@ -7,7 +7,7 @@
 body {
     margin: 0;
     min-height: 100vh;
-    background-image: url('./img/image copy 95.png');
+    background-image: url('./img - Copia/image copy 95.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -314,4 +314,44 @@ img {
         left: 0;
         top: 100%;
     }
+}
+/* =========================================
+   CORREÇÃO DEFINITIVA DO DROPDOWN
+========================================= */
+
+li.dropdown {
+    position: relative;
+}
+
+/* Oculta as sublistas por padrão para não quebrarem o cabeçalho */
+.dropdown-menu,
+.eixos-menu {
+    display: none !important;
+    position: absolute;
+    list-style: none;
+    background: rgba(255, 248, 250, 0.98);
+    border-radius: 12px;
+    border: 1px solid rgba(201, 154, 170, 0.5);
+    box-shadow: 0 10px 25px rgba(102, 39, 64, 0.18);
+    padding: 8px 0;
+    z-index: 1000;
+}
+
+.dropdown-menu {
+    top: 100%;
+    right: 0;
+    min-width: 180px;
+}
+
+.eixos-menu {
+    top: 0;
+    right: 100%;
+    min-width: 120px;
+}
+
+/* Exibe em coluna vertical apenas ao passar o rato */
+li.dropdown:hover > .dropdown-menu,
+.sub-dropdown-item:hover > .eixos-menu {
+    display: flex !important;
+    flex-direction: column !important;
 }
