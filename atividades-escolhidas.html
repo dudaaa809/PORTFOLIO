@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Atividades Escolhidas</title>
+
+    <link rel="stylesheet" href="atividade esc.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body class="pagina-atividade">
+
+    <header class="topo">
+        <a href="index.html" class="voltar">← VOLTAR</a>
+        <h1>ATIVIDADES ESCOLHIDAS</h1>
+    </header>
+
+    <main class="container">
+
+        <div class="areas">
+
+            <!-- LINGUAGENS -->
+            <section class="area" data-area="linguagens">
+                <button class="area-titulo" type="button" aria-expanded="false">
+                    LINGUAGENS <span>◂</span>
+                </button>
+
+                <div class="eixos">
+                    <a id="ling-eixo1" href="atividade%20esc.html?area=linguagens&amp;eixo=1">Eixo 1</a>
+                    <a id="ling-eixo2" href="atividade%20esc.html?area=linguagens&amp;eixo=2">Eixo 2</a>
+                    <a id="ling-eixo3" href="atividade%20esc.html?area=linguagens&amp;eixo=3">Eixo 3</a>
+                    <a id="ling-eixo4" href="atividade%20esc.html?area=linguagens&amp;eixo=4">Eixo 4</a>
+                </div>
+            </section>
+
+            <!-- HUMANAS -->
+            <section class="area" data-area="humanas">
+                <button class="area-titulo" type="button" aria-expanded="false">
+                    HUMANAS <span>◂</span>
+                </button>
+
+                <div class="eixos">
+                    <a id="hum-eixo1" href="atividade%20esc.html?area=humanas&amp;eixo=1">Eixo 1</a>
+                    <a id="hum-eixo2" href="atividade%20esc.html?area=humanas&amp;eixo=2">Eixo 2</a>
+                    <a id="hum-eixo3" href="atividade%20esc.html?area=humanas&amp;eixo=3">Eixo 3</a>
+                    <a id="hum-eixo4" href="atividade%20esc.html?area=humanas&amp;eixo=4">Eixo 4</a>
+                </div>
+            </section>
+
+            <!-- NATUREZA -->
+            <section class="area" data-area="natureza">
+                <button class="area-titulo" type="button" aria-expanded="false">
+                    NATUREZA <span>◂</span>
+                </button>
+
+                <div class="eixos">
+                    <a id="nat-eixo1" href="atividade%20esc.html?area=natureza&amp;eixo=1">Eixo 1</a>
+                    <a id="nat-eixo2" href="atividade%20esc.html?area=natureza&amp;eixo=2">Eixo 2</a>
+                    <a id="nat-eixo3" href="atividade%20esc.html?area=natureza&amp;eixo=3">Eixo 3</a>
+                    <a id="nat-eixo4" href="atividade%20esc.html?area=natureza&amp;eixo=4">Eixo 4</a>
+                </div>
+            </section>
+
+            <!-- MATEMÁTICA -->
+            <section class="area" data-area="matematica">
+                <button class="area-titulo" type="button" aria-expanded="false">
+                    MATEMÁTICA <span>◂</span>
+                </button>
+
+                <div class="eixos">
+                    <a id="mat-eixo1" href="atividade%20esc.html?area=matematica&amp;eixo=1">Eixo 1</a>
+                    <a id="mat-eixo2" href="atividade%20esc.html?area=matematica&amp;eixo=2">Eixo 2</a>
+                    <a id="mat-eixo3" href="atividade%20esc.html?area=matematica&amp;eixo=3">Eixo 3</a>
+                    <a id="mat-eixo4" href="atividade%20esc.html?area=matematica&amp;eixo=4">Eixo 4</a>
+                </div>
+            </section>
+
+        </div>
+
+    </main>
+
+    <script>
+        const botoesArea = document.querySelectorAll(".area-titulo");
+
+        botoesArea.forEach((botao) => {
+            botao.addEventListener("click", () => {
+                const area = botao.closest(".area");
+                const aberta = area.classList.toggle("ativa");
+
+                botao.setAttribute("aria-expanded", String(aberta));
+            });
+        });
+
+        function abrirAreaDoHash() {
+            const id = decodeURIComponent(window.location.hash.slice(1));
+            const eixo = id ? document.getElementById(id) : null;
+
+            if (!eixo) return;
+
+            const area = eixo.closest(".area");
+            const botao = area.querySelector(".area-titulo");
+
+            area.classList.add("ativa");
+            botao.setAttribute("aria-expanded", "true");
+
+            eixo.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+
+        window.addEventListener("hashchange", abrirAreaDoHash);
+
+        abrirAreaDoHash();
+    </script>
+
+</body>
+</html>

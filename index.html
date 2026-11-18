@@ -10,13 +10,136 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* Ajuste para comportar todos os tópicos no menu lateral */
+        .menu-lateral {
+            left: -280px;
+            width: 265px;
+            overflow-y: auto;
+            padding-bottom: 30px;
+        }
+
+        .menu-lateral a {
+            padding: 13px 24px;
+            font-size: 15px;
+        }
+
+        .menu-divisor {
+            border: none;
+            border-top: 1px solid rgba(102, 39, 64, 0.2);
+            margin: 10px 24px;
+        }
+
+        /* Janela de Objetivos dentro do próprio index.html */
+        .modal-objetivos {
+            position: fixed;
+            inset: 0;
+            background-color: #ecd6d8;
+            background-image: url('./img - Copia/image copy 95.png');
+            background-size: cover;
+            background-position: center;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 20px 40px;
+            overflow-y: auto;
+            z-index: 4000;
+        }
+
+        .modal-objetivos.ativo {
+            display: flex;
+        }
+
+        .btn-voltar-modal {
+            position: fixed;
+            top: 25px;
+            left: 25px;
+            padding: 10px 18px;
+            border: 1px solid rgba(102, 39, 64, 0.35);
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.65);
+            color: #662740;
+            font-family: 'Oswald', sans-serif;
+            font-size: 13px;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: 0.3s;
+            z-index: 4100;
+        }
+
+        .btn-voltar-modal:hover {
+            background: #662740;
+            color: #ffffff;
+        }
+
+        .conteudo-objetivos {
+            width: 100%;
+            max-width: 1020px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .conteudo-objetivos h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(38px, 5vw, 64px);
+            font-weight: 500;
+            letter-spacing: 4px;
+            color: #963D5A;
+            margin-bottom: 35px;
+        }
+
+        .grade-objetivos {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .card-objetivo {
+            background: rgba(255, 248, 250, 0.85);
+            border: 2px solid rgba(255, 255, 255, 0.95);
+            border-radius: 25px;
+            padding: 35px 26px;
+            box-shadow: 0 12px 30px rgba(110, 55, 70, 0.12);
+            text-align: left;
+        }
+
+        .card-objetivo h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 20px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            color: #963D5A;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+
+        .card-objetivo p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            line-height: 1.5;
+            color: #662740;
+        }
+
+        @media (max-width: 900px) {
+            .modal-objetivos {
+                align-items: flex-start;
+            }
+
+            .grade-objetivos {
+                grid-template-columns: 1fr;
+                max-width: 520px;
+                margin: 0 auto;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
 <!-- =====================================
-     TELA DE LOGIN (SOBREPÕE O PORTFÓLIO)
+     TELA DE LOGIN
 ====================================== -->
 <div id="tela-login" style="
     position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
@@ -41,7 +164,7 @@
             border: 1px solid #C99AAA; font-family: 'Cormorant Garamond', serif; font-size: 16px; box-sizing: border-box;
         ">
         
-        <button onclick="fazerLogin()" style="
+        <button type="button" onclick="fazerLogin()" style="
             width: 100%; padding: 12px; background: #963D5A; color: white; border: none; 
             border-radius: 20px; font-family: 'Oswald', sans-serif; font-size: 16px; 
             cursor: pointer; letter-spacing: 2px;
@@ -54,90 +177,46 @@
 </div>
 
 <!-- =====================================
-     CONTEÚDO DO PORTFÓLIO (INICIA ESCONDIDO)
+     CONTEÚDO DO PORTFÓLIO
 ====================================== -->
 <div id="conteudo-portfolio" style="display: none;">
 
     <!-- BARRINHAS DO MENU LATERAL -->
-    <button class="menu-lateral-btn" id="menuLateralBtn">
+    <button type="button" class="menu-lateral-btn" id="menuLateralBtn" aria-label="Abrir menu">
         <span></span>
         <span></span>
         <span></span>
     </button>
 
-    <!-- MENU LATERAL -->                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+    <!-- MENU LATERAL NA ORDEM SOLICITADA -->
     <div class="menu-lateral" id="menuLateral">
+        <a href="sobre.html">IDENTIFICAÇÃO PESSOAL</a>
+        <a href="#objetivos" onclick="abrirObjetivos(event)">OBJETIVOS</a>
+        <a href="ppe.html">PPE</a>
+        <a href="historia.html">HISTÓRIA DE VIDA</a>
+        <a href="projeto.html">PROJETO DE VIDA</a>
+
+        <hr class="menu-divisor">
+
         <a href="curriculo.html">CURRÍCULO</a>
         <a href="anexos.html">ANEXOS</a>
         <a href="consideracoes.html">CONSIDERAÇÕES FINAIS</a>
         <a href="referencias.html">REFERÊNCIAS</a>
     </div>
 
-   
-    <!-- MENU ORIGINAL COM ATIVIDADES ESCOLHIDAS POR ÚLTIMO -->
+    <!-- MENU PRINCIPAL (APENAS ÁREAS DO CONHECIMENTO / ATIVIDADES) -->
     <header>
         <nav>
             <ul>
-                <li><a href="sumário.html">SUMÁRIO</a></li>
-                <li><a href="sobre.html">SOBRE MIM</a></li>
-                <li><a href="ppe.html">PPE</a></li>
-                <li><a href="projeto.html">PROJETO</a></li>
                 <li><a href="linguagens.html">LINGUAGENS</a></li>
                 <li><a href="humanas.html">HUMANAS</a></li>
                 <li><a href="natureza.html">NATUREZA</a></li>
                 <li><a href="matematica.html">MATEMÁTICA</a></li>
                 <li><a href="senai.html">SENAI</a></li>
-
-                <!-- ITEM ADICIONADO NO FINAL DO MENU -->
                 <li class="dropdown">
                     <a href="atividades-escolhidas.html" class="dropdown-btn">
                         ATIVIDADES ESCOLHIDAS <span class="seta">▼</span>
                     </a>
-                    <ul class="dropdown-menu">
-                        <!-- LINGUAGENS -->
-                        <li class="sub-dropdown-item">
-                            <a href="atividades-escolhidas.html#ling-eixo1">LINGUAGENS <span class="seta-sub">◂</span></a>
-                            <ul class="eixos-menu">
-                                <li><a href="atividades-escolhidas.html#ling-eixo1">Eixo 1</a></li>
-                                <li><a href="atividades-escolhidas.html#ling-eixo2">Eixo 2</a></li>
-                                <li><a href="atividades-escolhidas.html#ling-eixo3">Eixo 3</a></li>
-                                <li><a href="atividades-escolhidas.html#ling-eixo4">Eixo 4</a></li>
-                            </ul>
-                        </li>
-
-                        <!-- HUMANAS -->
-                        <li class="sub-dropdown-item">
-                            <a href="atividades-escolhidas.html#hum-eixo1">HUMANAS <span class="seta-sub">◂</span></a>
-                            <ul class="eixos-menu">
-                                <li><a href="atividades-escolhidas.html#hum-eixo1">Eixo 1</a></li>
-                                <li><a href="atividades-escolhidas.html#hum-eixo2">Eixo 2</a></li>
-                                <li><a href="atividades-escolhidas.html#hum-eixo3">Eixo 3</a></li>
-                                <li><a href="atividades-escolhidas.html#hum-eixo4">Eixo 4</a></li>
-                            </ul>
-                        </li>
-
-                        <!-- NATUREZA -->
-                        <li class="sub-dropdown-item">
-                            <a href="atividades-escolhidas.html#nat-eixo1">NATUREZA <span class="seta-sub">◂</span></a>
-                            <ul class="eixos-menu">
-                                <li><a href="atividades-escolhidas.html#nat-eixo1">Eixo 1</a></li>
-                                <li><a href="atividades-escolhidas.html#nat-eixo2">Eixo 2</a></li>
-                                <li><a href="atividades-escolhidas.html#nat-eixo3">Eixo 3</a></li>
-                                <li><a href="atividades-escolhidas.html#nat-eixo4">Eixo 4</a></li>
-                            </ul>
-                        </li>
-
-                        <!-- MATEMÁTICA -->
-                        <li class="sub-dropdown-item">
-                            <a href="atividades-escolhidas.html#mat-eixo1">MATEMÁTICA <span class="seta-sub">◂</span></a>
-                            <ul class="eixos-menu">
-                                <li><a href="atividades-escolhidas.html#mat-eixo1">Eixo 1</a></li>
-                                <li><a href="atividades-escolhidas.html#mat-eixo2">Eixo 2</a></li>
-                                <li><a href="atividades-escolhidas.html#mat-eixo3">Eixo 3</a></li>
-                                <li><a href="atividades-escolhidas.html#mat-eixo4">Eixo 4</a></li>
-                            </ul>
-                        </li>
-                    </ul>
                 </li>
             </ul>
         </nav>
@@ -159,34 +238,72 @@
 </div>
 
 <!-- =====================================
-     SCRIPTS DE FUNCIONAMENTO (LOGIN E MENU)
+     ABA DE OBJETIVOS (DENTRO DO INDEX)
+====================================== -->
+<section class="modal-objetivos" id="modalObjetivos" aria-hidden="true">
+    <button type="button" class="btn-voltar-modal" onclick="fecharObjetivos()">← VOLTAR</button>
+
+    <div class="conteudo-objetivos">
+        <h2>OBJETIVOS</h2>
+
+        <div class="grade-objetivos">
+            <article class="card-objetivo">
+                <h3>CURTO PRAZO</h3>
+                <p>
+                    Concluir com dedicação e excelência a 3ª série do Ensino Médio e o curso técnico de Informática para Internet no SENAI, consolidando os aprendizados desenvolvidos ao longo dessa etapa.
+                </p>
+            </article>
+
+            <article class="card-objetivo">
+                <h3>MÉDIO PRAZO</h3>
+                <p>
+                    Ingressar na faculdade de Fisioterapia, mantendo disciplina nos estudos e buscando experiências práticas que contribuam para a minha formação acadêmica.
+                </p>
+            </article>
+
+            <article class="card-objetivo">
+                <h3>LONGO PRAZO</h3>
+                <p>
+                    Exercer a profissão de fisioterapeuta com excelência, ética e responsabilidade, tornando-me uma profissional realizada e bem-sucedida.
+                </p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- =====================================
+     SCRIPTS DE FUNCIONAMENTO
 ====================================== -->
 <script>
-    window.onload = function() {
-        if (sessionStorage.getItem('logado') === 'true') {
-            document.getElementById('tela-login').style.display = 'none';
-            document.getElementById('conteudo-portfolio').style.display = 'block';
-        }
-    };
+    window.addEventListener('DOMContentLoaded', function() {
+        try {
+            if (sessionStorage.getItem('logado') === 'true') {
+                document.getElementById('tela-login').style.display = 'none';
+                document.getElementById('conteudo-portfolio').style.display = 'block';
+            }
+        } catch (e) {}
+    });
 
     function fazerLogin() {
-        var email = document.getElementById('email').value.trim();
+        var email = document.getElementById('email').value.trim().toLowerCase();
         var senha = document.getElementById('senha').value.trim();
 
         var emailCorreto = 'duda@senai.com';
         var senhaCorreta = '123456';
 
         if (email === emailCorreto && senha === senhaCorreta) {
-            sessionStorage.setItem('logado', 'true');
             document.getElementById('tela-login').style.display = 'none';
             document.getElementById('conteudo-portfolio').style.display = 'block';
             document.getElementById('erro-login').style.display = 'none';
+            try {
+                sessionStorage.setItem('logado', 'true');
+            } catch (e) {}
         } else {
             document.getElementById('erro-login').style.display = 'block';
         }
     }
 
-    document.addEventListener('keypress', function(event) {
+    document.addEventListener('keydown', function(event) {
         if (event.key === 'Enter' && document.getElementById('tela-login').style.display !== 'none') {
             fazerLogin();
         }
@@ -194,6 +311,7 @@
 
     const botao = document.getElementById("menuLateralBtn");
     const menu = document.getElementById("menuLateral");
+    const modalObjetivos = document.getElementById("modalObjetivos");
 
     if (botao && menu) {
         botao.addEventListener("click", function(event) {
@@ -207,7 +325,29 @@
             }
         });
     }
+
+    function abrirObjetivos(event) {
+        if (event) event.preventDefault();
+        if (menu) menu.classList.remove("aberto");
+        if (modalObjetivos) {
+            modalObjetivos.classList.add("ativo");
+            modalObjetivos.setAttribute("aria-hidden", "false");
+        }
+    }
+
+    function fecharObjetivos() {
+        if (modalObjetivos) {
+            modalObjetivos.classList.remove("ativo");
+            modalObjetivos.setAttribute("aria-hidden", "true");
+        }
+    }
+
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "Escape") {
+            fecharObjetivos();
+        }
+    });
 </script>
 
 </body>
-</html>  
+</html>

@@ -1,0 +1,399 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --vinho: #820052;
+    --vinho-claro: #a54b70;
+    --rosa: #bd7893;
+    --rosa-claro: #fff7fa;
+    --borda: #e8c6d4;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Oswald", sans-serif;
+    color: var(--vinho);
+
+    background-color: #fffafa;
+
+    background-image:
+        linear-gradient(
+            45deg,
+            rgba(236, 194, 207, 0.16) 25%,
+            transparent 25%,
+            transparent 75%,
+            rgba(236, 194, 207, 0.16) 75%
+        ),
+        linear-gradient(
+            45deg,
+            rgba(236, 194, 207, 0.16) 25%,
+            transparent 25%,
+            transparent 75%,
+            rgba(236, 194, 207, 0.16) 75%
+        );
+
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
+}
+
+/* CABEÇALHO */
+
+.topo {
+    width: 100%;
+    margin: 0 auto;
+    padding: 30px 24px 20px;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+}
+
+.logo {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 13px;
+    letter-spacing: 5px;
+    white-space: nowrap;
+}
+
+.topo h1 {
+    grid-area: 1 / 1;
+
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.topo .voltar {
+    grid-area: 1 / 1;
+    justify-self: start;
+    z-index: 1;
+}
+
+.topo h1 span {
+    font-size: 13px;
+    margin-left: 5px;
+}
+
+/* MENU DE ÁREAS */
+
+.container {
+    width: min(100% - 40px, 950px);
+    margin: 0 auto;
+    padding: 10px 0 60px;
+}
+
+.areas {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.area {
+    background: rgba(255, 248, 251, 0.96);
+    border: 1px solid var(--borda);
+    border-radius: 15px;
+    overflow: hidden;
+
+    box-shadow: 0 5px 15px rgba(130, 0, 82, 0.07);
+
+    transition: box-shadow 0.25s ease;
+}
+
+.area.ativa {
+    box-shadow: 0 8px 20px rgba(130, 0, 82, 0.12);
+}
+
+.area-titulo {
+    width: 100%;
+    min-height: 58px;
+    padding: 16px 22px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border: none;
+    background: transparent;
+    color: var(--vinho);
+
+    font-family: "Oswald", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+
+    cursor: pointer;
+    transition: background 0.25s, color 0.25s;
+}
+
+.area-titulo span {
+    font-size: 13px;
+    transition: transform 0.25s;
+}
+
+.area.ativa .area-titulo {
+    background: var(--rosa);
+    color: white;
+}
+
+.area.ativa .area-titulo span {
+    transform: rotate(-90deg);
+}
+
+/* EIXOS */
+
+.eixos {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s ease;
+}
+
+.area.ativa .eixos {
+    grid-template-rows: 1fr;
+}
+
+.eixos a {
+    min-height: 0;
+    overflow: hidden;
+    padding: 0 22px;
+
+    display: flex;
+    align-items: center;
+
+    color: var(--vinho);
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 2px;
+
+    transition: background 0.2s, color 0.2s, padding 0.2s;
+}
+
+/* Mantém os links em uma coluna */
+
+.eixos {
+    display: flex;
+    flex-direction: column;
+}
+
+.eixos a {
+    display: none;
+    min-height: 48px;
+    padding: 12px 22px;
+}
+
+.area.ativa .eixos a {
+    display: flex;
+}
+
+.eixos a:hover {
+    background: #f8e7ef;
+    color: var(--vinho-claro);
+    padding-left: 30px;
+}
+
+/* CELULARES */
+
+/* LINK VOLTAR */
+
+.voltar {
+    color: var(--vinho);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    transition: color 0.2s;
+}
+
+.voltar:hover {
+    color: var(--vinho-claro);
+}
+
+/* PÁGINA DA ATIVIDADE */
+
+.cabecalho-atividade {
+    width: min(100% - 40px, 950px);
+    margin: 0 auto;
+    padding: 30px 0 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.cabecalho-atividade p {
+    font-size: 13px;
+    letter-spacing: 4px;
+    text-align: right;
+}
+
+.conteudo-atividade {
+    width: min(100% - 40px, 950px);
+    margin: 0 auto;
+    padding: 20px 0 70px;
+    text-align: center;
+}
+
+.conteudo-atividade h1 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.subtitulo-atividade {
+    margin-bottom: 30px;
+    color: var(--vinho-claro);
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.imagem-container {
+    display: block;
+    width: min(100%, 760px);
+    margin: 0 auto;
+    padding: 14px;
+
+    background: rgba(255, 248, 251, 0.96);
+    border: 1px solid var(--borda);
+    border-radius: 18px;
+    box-shadow: 0 10px 28px rgba(130, 0, 82, 0.10);
+
+    cursor: zoom-in;
+}
+
+.imagem-container:disabled {
+    cursor: default;
+}
+
+.imagem-container img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+.mensagem-imagem {
+    display: block;
+    padding: 40px 20px;
+    color: var(--vinho-claro);
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.instrucao {
+    margin-top: 14px;
+    color: var(--rosa);
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+/* MODAL DA IMAGEM */
+
+.modal-imagem {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+    background: rgba(60, 0, 38, 0.84);
+}
+
+.modal-imagem.aberto {
+    display: flex;
+}
+
+.modal-imagem img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.fechar-modal {
+    position: absolute;
+    top: 18px;
+    right: 24px;
+
+    width: 44px;
+    height: 44px;
+
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--vinho);
+
+    font-size: 26px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.fechar-modal:hover {
+    background: white;
+}
+
+@media (max-width: 600px) {
+    .topo {
+        width: 100%;
+        padding: 25px 15px 20px;
+    }
+
+    .logo {
+        font-size: 11px;
+        letter-spacing: 3px;
+    }
+
+    .topo h1 {
+        font-size: clamp(9.5px, 3.2vw, 13px);
+        letter-spacing: clamp(1px, 0.55vw, 2px);
+    }
+
+    .container {
+        width: calc(100% - 30px);
+        padding-top: 15px;
+    }
+
+    .area-titulo {
+        font-size: 13px;
+        letter-spacing: 3px;
+    }
+
+    .cabecalho-atividade {
+        width: calc(100% - 30px);
+        padding-top: 25px;
+        align-items: flex-start;
+    }
+
+    .cabecalho-atividade p {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    .conteudo-atividade {
+        width: calc(100% - 30px);
+    }
+
+    .imagem-container {
+        padding: 8px;
+    }
+
+    .modal-imagem {
+        padding: 12px;
+    }
+}

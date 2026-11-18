@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Atividade Escolhida</title>
+
+    <link rel="stylesheet" href="atividade esc.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body class="pagina-atividade">
+
+    <header class="cabecalho-atividade">
+        <a href="atividades-escolhidas.html" class="voltar">
+            ← VOLTAR
+        </a>
+
+        <p id="identificacao">ATIVIDADES ESCOLHIDAS</p>
+    </header>
+
+    <main class="conteudo-atividade">
+
+        <h1 id="tituloAtividade">Atividade escolhida</h1>
+
+        <p class="subtitulo-atividade" id="subtituloAtividade"></p>
+
+        <button class="imagem-container" id="abrirImagem"
+                type="button"
+                aria-label="Ampliar imagem da atividade">
+
+            <img id="imagemAtividade"
+                 src=""
+                 alt="Atividade escolhida"
+                 style="display: none;">
+
+            <span id="mensagemImagem" class="mensagem-imagem">
+                Carregando atividade...
+            </span>
+        </button>
+
+        <p class="instrucao">Clique na imagem para ampliá-la.</p>
+
+    </main>
+
+    <div class="modal-imagem" id="modalImagem" aria-hidden="true">
+        <button class="fechar-modal" id="fecharImagem"
+                type="button"
+                aria-label="Fechar imagem">×</button>
+
+        <img id="imagemAmpliada" src="" alt="Atividade ampliada">
+    </div>
+
+    <script>
+        const parametros = new URLSearchParams(window.location.search);
+
+        const area = (parametros.get("area") || "").toLowerCase();
+        const eixo = Number(parametros.get("eixo"));
+
+        const nomesAreas = {
+            linguagens: "Linguagens",
+            humanas: "Humanas",
+            natureza: "Natureza",
+            matematica: "Matemática"
+        };
+
+        // Cada eixo aponta para a imagem da atividade escolhida.
+        const atividades = {
+            linguagens: {
+                1: { titulo: "Atividade escolhida", imagem: "img - Copia/PAPEL TIMBRADO SESII.pdf (1).png" },
+                2: { titulo: "Atividade escolhida", imagem: "img - Copia/image copy 39.png" },
+                3: { titulo: "Atividade escolhida", imagem: "img - Copia/image copy 128.png" },
+                4: { titulo: "Atividade escolhida", imagem: "img - Copia/image copy 3.png" }
+            },
+            
+            humanas: {
+                1: { titulo: "Atividade escolhida", imagem: "img - Copia/PAPEL TIMBRADO SESII.pdf (2).png" },
+                2: { titulo: "Atividade escolhida", imagem: "img - Copia/image copy 42.png" },
+                3: { titulo: "Atividade escolhida", imagem: "img - Copia/image copy 124.png" },
+                4: { titulo: "Atividade escolhida", imagem: "img - Copia/image copy 4.png" }
+            },
+
+            natureza: {
+                1: { titulo: "Atividade escolhida", imagem: "img - Copia/image copy 89.png" },
+                2: { titulo: "Atividade escolhida", imagem: "img - Copia/image copy 78.png" },
+                3: { titulo: "Atividade escolhida", imagem: "img - Copia/image copy 131.png" },
+                4: { titulo: "Atividade escolhida", imagem: "img - Copia/image copy 44.png" }
+            },
+
+            matematica: {
+                1: { titulo: "Atividade escolhida", imagem: "img - Copia/image copy 19.png" },
+                2: { titulo: "Atividade escolhida", imagem: "img - Copia/image copy 94.png" },
+                3: { titulo: "Atividade escolhida", imagem: "img - Copia/image copy 127.png" },
+                4: { titulo: "Atividade escolhida", imagem: "img - Copia/image copy 46.png" }
+            }
+        };
+
+        const titulo = document.getElementById("tituloAtividade");
+        const subtitulo = document.getElementById("subtituloAtividade");
+        const identificacao = document.getElementById("identificacao");
+        const imagem = document.getElementById("imagemAtividade");
+        const mensagem = document.getElementById("mensagemImagem");
+        const botaoImagem = document.getElementById("abrirImagem");
+
+        const areaValida = Object.prototype.hasOwnProperty.call(nomesAreas, area);
+        const atividade = atividades[area]?.[eixo];
+
+        if (!areaValida) {
+            titulo.textContent = "Atividade não encontrada";
+            subtitulo.textContent = "Verifique a área e o eixo selecionados.";
+            identificacao.textContent = "ATIVIDADES ESCOLHIDAS";
+            mensagem.textContent = "Selecione uma área válida na página anterior.";
+            botaoImagem.disabled = true;
+        } else if (!atividade) {
+            document.title = `${nomesAreas[area]} - Eixo ${eixo}`;
+
+            titulo.textContent = "Atividade ainda não cadastrada";
+            subtitulo.textContent = `${nomesAreas[area]} · Eixo ${eixo}`;
+            identificacao.textContent =
+                `${nomesAreas[area].toUpperCase()} · EIXO ${eixo}`;
+            mensagem.textContent =
+                "Ainda não há uma atividade escolhida para este eixo.";
+            botaoImagem.disabled = true;
+        } else {
+            document.title = `${nomesAreas[area]} - Eixo ${eixo}`;
+
+            titulo.textContent = atividade.titulo;
+            subtitulo.textContent = `${nomesAreas[area]} · Eixo ${eixo}`;
+            identificacao.textContent =
+                `${nomesAreas[area].toUpperCase()} · EIXO ${eixo}`;
+
+            imagem.onload = () => {
+                imagem.style.display = "block";
+                mensagem.style.display = "none";
+            };
+
+            imagem.onerror = () => {
+                imagem.style.display = "none";
+                mensagem.style.display = "block";
+                mensagem.textContent =
+                    "Não foi possível carregar a imagem. Confira o nome e o caminho do arquivo.";
+            };
+
+            imagem.src = atividade.imagem;
+        }
+
+        // Abrir imagem ampliada
+        const modal = document.getElementById("modalImagem");
+        const imagemAmpliada = document.getElementById("imagemAmpliada");
+
+        botaoImagem.addEventListener("click", () => {
+            if (!atividade || !imagem.complete || imagem.naturalWidth === 0) {
+                return;
+            }
+
+            imagemAmpliada.src = imagem.src;
+            modal.classList.add("aberto");
+            modal.setAttribute("aria-hidden", "false");
+        });
+
+        function fecharModal() {
+            modal.classList.remove("aberto");
+            modal.setAttribute("aria-hidden", "true");
+            imagemAmpliada.src = "";
+        }
+
+        document.getElementById("fecharImagem")
+            .addEventListener("click", fecharModal);
+
+        modal.addEventListener("click", (evento) => {
+            if (evento.target === modal) fecharModal();
+        });
+
+        document.addEventListener("keydown", (evento) => {
+            if (evento.key === "Escape") fecharModal();
+        });
+    </script>
+
+</body>
+</html>
+
